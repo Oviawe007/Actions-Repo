@@ -44,8 +44,6 @@ jobs:
       - name: Deploy to Staging
         run: |
           echo "Deploying to staging server..."
-          # Replace the following line with your actual deployment commands
-          scp -r ./dist user@staging-server:/path/to/deployment/
-        env:
-          STAGING_SERVER: ${{ secrets.STAGING_SERVER }}
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        env: 
+          name: Staging  
+        
