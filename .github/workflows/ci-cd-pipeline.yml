@@ -45,6 +45,10 @@ jobs:
       - name: Deploy to Staging
         run: |
           echo "Deploying to staging server..."
+          if [ -z "$STAGING_SERVER" ]; then
+           echo "STAGING_SERVER is not set. Exiting."
+           exit 1
+          fi
           scp -r ./dist ubuntu@$STAGING_SERVER:/var/www/html/
         env:
           name: Staging
