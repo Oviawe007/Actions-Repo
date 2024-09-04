@@ -2,7 +2,7 @@
 
 ## Objective
 
-This outlines the CI/CD pipeline setup using GitHub Actions, which automates the processes of building, testing, and deploying an application to a staging environment whenever changes are pushed to the `main` branch.
+This CI/CD pipeline is designed to automate the build, testing, and deployment of a Node.js application. The pipeline is triggered by a push to the `main` branch and includes multiple Node.js versions to ensure compatibility across different environments.
 
 ## Functional Requirements:
 
