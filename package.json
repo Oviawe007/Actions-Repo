@@ -1,0 +1,16 @@
+{
+  "name": "actions-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "mkdir -p dist && cp index.js dist/index.js",
+    "test": "mocha test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
