@@ -38,17 +38,26 @@ jobs:
     if: success()
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Deploy to Staging
+      - name: Connect to Staging Server via SSH
         run: |
-          echo "Deploying to staging server..."
-          scp -r ./dist ubuntu@$staging-server:/var/www/html/
+          echo "Connecting to staging environment on Ubuntu EC2 instance..."
+          ssh -i ${{ secrets.AWS_SSH_KEY }} ubuntu@${{ secrets.STAGING_SERVER }}
         env:
-          name: Staging
           AWS_SSH_KEY: ${{ secrets.AWS_SSH_KEY }}
           STAGING_SERVER: ${{ secrets.STAGING_SERVER }}
+
+    # steps:
+    #   - name: Checkout code
+    #     uses: actions/checkout@v3
+
+    #   - name: Deploy to Staging
+    #     run: |
+    #       echo "Deploying to staging server..."
+    #       scp -r ./dist ubuntu@$staging-server:/var/www/html/
+    #     env:
+    #       name: Staging
+    #       AWS_SSH_KEY: ${{ secrets.AWS_SSH_KEY }}
+    #       STAGING_SERVER: ${{ secrets.STAGING_SERVER }}
           
             
         
