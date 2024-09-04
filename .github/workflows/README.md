@@ -20,17 +20,17 @@ This outlines the CI/CD pipeline setup using GitHub Actions, which automates the
 
 **Location**: `.github/workflows/ci-cd-pipeline.yml`
 **Workflow Overview:**
-    - ### Trigger: The workflow is triggered by push events to the `main` branch.
-    - ### Jobs:
-        - build-and-test:
-        - Checks out the code.
-        - Sets up Node.js.
-        - Installs dependencies.
-        - Runs unit tests.
-    - ### deploy:
-        - Runs after `build-and-test` completes successfully.
-        - Checks out the code again.
-        - Deploys the application to the staging environment.
+- ### Trigger: The workflow is triggered by push events to the `main` branch.
+- ### Jobs:
+    - build-and-test:
+    - Checks out the code.
+    - Sets up Node.js.
+    - Installs dependencies.
+    - Runs unit tests.
+- ### deploy:
+    - Runs after `build-and-test` completes successfully.
+    - Checks out the code again.
+    - Deploys the application to the staging environment.
 
 ## Secrets and Environment Variables
 
