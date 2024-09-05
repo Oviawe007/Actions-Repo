@@ -45,7 +45,7 @@ jobs:
       - name: Deploy to Staging
         run: |
           echo "Deploying to staging server.."
-          scp -r ./dist ubuntu@$STAGING_SERVER:/var/www/html/
+        #  scp -r ./dist ubuntu@$STAGING_SERVER:/var/www/html/
         env:
           name: Staging
           AWS_SSH_KEY: ${{ secrets.AWS_SSH_KEY }}
